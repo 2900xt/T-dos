@@ -21,9 +21,7 @@ start:
     jmp PROGRAM_SPACE
 
 
-;
-;DISK_READ : READS a disk using int 13h ah = 2
-;
+
 ;BX = Output Location
 ;AL = Sectors
 ;CH = Ending Cylinder
@@ -48,9 +46,6 @@ DiskReadFailed:
     mov bx, DiskReadErrorString
     call PrintStr
     jmp $
-
-
-;PrintString: Prints string in [BX] to TTY
 
 PrintStr:
     mov ah, 0x0e
